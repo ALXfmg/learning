@@ -57,6 +57,5 @@ void loop() {
   atencaoED (2000);
   verdeEvermelhoD (10000);
   atencaoED(2000);
-  vermelhoEverdeD(10000);
-  
+
 }
