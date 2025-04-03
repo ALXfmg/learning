@@ -1,0 +1,62 @@
+#include <Arduino.h>
+
+#define vermelhoE 15
+#define vermelhoD 13
+#define amareloE 2
+#define amareloD 12
+#define verdeE 4
+#define verdeD 14
+
+void setup() {
+
+pinMode(vermelhoE, OUTPUT);
+pinMode(vermelhoD, OUTPUT);
+pinMode(amareloE, OUTPUT);
+pinMode(amareloD, OUTPUT);
+pinMode(verdeE, OUTPUT);
+pinMode(verdeD, OUTPUT);
+}
+
+void vermelhoEverdeD(int tempo) {
+
+digitalWrite(vermelhoE, HIGH);
+digitalWrite(vermelhoD, LOW);
+digitalWrite(amareloD, LOW);
+digitalWrite(amareloE, LOW);
+digitalWrite(verdeD, HIGH);
+digitalWrite(verdeE, LOW);
+delay(tempo);
+}
+
+void atencaoED (int tempo){
+
+  digitalWrite(vermelhoE, LOW);
+  digitalWrite(vermelhoD, LOW);
+  digitalWrite(amareloD, HIGH);
+  digitalWrite(amareloE, HIGH);
+  digitalWrite(verdeD, LOW);
+  digitalWrite(verdeE, LOW);
+delay(tempo);
+}
+void verdeEvermelhoD(int tempo){
+
+  digitalWrite(vermelhoE, LOW);
+  digitalWrite(vermelhoD, HIGH);
+  digitalWrite(amareloD, LOW);
+  digitalWrite(amareloE, LOW);
+  digitalWrite(verdeD, LOW);
+  digitalWrite(verdeE, HIGH);
+  delay(tempo);
+
+
+}
+
+
+void loop() {
+  vermelhoEverdeD (10000);
+  atencaoED (2000);
+  verdeEvermelhoD (10000);
+  atencaoED(2000);
+  vermelhoEverdeD(10000);
+  
+}
